@@ -11,6 +11,7 @@ import Destination_Details from "../components/destination-details";
 import Tours from "../components/tours";
 import Tour_Details from "../components/tour-details";
 import Gallery from "../components/gallery";
+import AddDestinations from "../components/destinations/add-destination";
 
 export default function AdminPage() {
     return (
@@ -66,6 +67,7 @@ export default function AdminPage() {
                 <Routes>
                     <Route path="/" element = {<Dashboard/>}/>
                     <Route path="/destinations" element = {<Destinations/>} />
+                    <Route path="/add-destinations" element = {<AddDestinations/>} />
                     <Route path="/destination-details" element = {<Destination_Details/>} />
                     <Route path="/tours" element = {<Tours/>} />
                     <Route path="/tour-details" element = {<Tour_Details/>} />
