@@ -37,7 +37,6 @@ const destinations = [
 export default function Destinations() {
   const handleEdit = (id: number) => {
     console.log("Edit destination:", id);
-    // Add your edit logic here
   };
 
   const handleDelete = (id: number) => {
@@ -108,14 +107,14 @@ export default function Destinations() {
                   <div className="flex justify-center gap-2">
                     <button
                       onClick={() => handleEdit(destination.id)}
-                      className="p-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-400 rounded-md transition-colors duration-200"
+                      className="p-2 bg-blue-500/20 cursor-pointer hover:bg-blue-500/40 text-blue-400 rounded-md transition-colors duration-200"
                       title="Edit"
                     >
                       <FiEdit className="text-lg" />
                     </button>
                     <button
                       onClick={() => handleDelete(destination.id)}
-                      className="p-2 bg-red-500/20 hover:bg-red-500/40 text-red-400 rounded-md transition-colors duration-200"
+                      className="p-2 bg-red-500/20 cursor-pointer hover:bg-red-500/40 text-red-400 rounded-md transition-colors duration-200"
                       title="Delete"
                     >
                       <FiTrash2 className="text-lg" />
