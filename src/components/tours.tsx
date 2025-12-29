@@ -1,4 +1,12 @@
-import { FiEdit, FiTrash2, FiUsers, FiCalendar, FiDollarSign } from "react-icons/fi";
+import { FaPlus } from "react-icons/fa";
+import {
+  FiEdit,
+  FiTrash2,
+  FiUsers,
+  FiCalendar,
+  FiDollarSign,
+} from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 // TypeScript interface matching your schema
 interface Tour {
@@ -22,11 +30,13 @@ const tours: Tour[] = [
     tour_category: "Cultural Heritage",
     total_days: 7,
     max_passengers: 15,
-    tour_description: "Explore ancient cities of Anuradhapura, Polonnaruwa, and Sigiriya with expert guides",
+    tour_description:
+      "Explore ancient cities of Anuradhapura, Polonnaruwa, and Sigiriya with expert guides",
     tour_price: 850,
-    tour_image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400",
+    tour_image:
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400",
     createdAt: "2024-01-15T10:00:00Z",
-    updatedAt: "2024-01-15T10:00:00Z"
+    updatedAt: "2024-01-15T10:00:00Z",
   },
   {
     _id: "2",
@@ -34,11 +44,13 @@ const tours: Tour[] = [
     tour_category: "Nature & Adventure",
     total_days: 5,
     max_passengers: 12,
-    tour_description: "Journey through misty tea plantations, waterfalls, and scenic train rides in Ella and Nuwara Eliya",
+    tour_description:
+      "Journey through misty tea plantations, waterfalls, and scenic train rides in Ella and Nuwara Eliya",
     tour_price: 650,
-    tour_image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400",
+    tour_image:
+      "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400",
     createdAt: "2024-01-16T10:00:00Z",
-    updatedAt: "2024-01-16T10:00:00Z"
+    updatedAt: "2024-01-16T10:00:00Z",
   },
   {
     _id: "3",
@@ -46,11 +58,13 @@ const tours: Tour[] = [
     tour_category: "Beach & Wildlife",
     total_days: 4,
     max_passengers: 20,
-    tour_description: "Relax on pristine beaches, enjoy whale watching in Mirissa, and explore Galle Fort",
+    tour_description:
+      "Relax on pristine beaches, enjoy whale watching in Mirissa, and explore Galle Fort",
     tour_price: 550,
-    tour_image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400",
+    tour_image:
+      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400",
     createdAt: "2024-01-17T10:00:00Z",
-    updatedAt: "2024-01-17T10:00:00Z"
+    updatedAt: "2024-01-17T10:00:00Z",
   },
   {
     _id: "4",
@@ -58,11 +72,13 @@ const tours: Tour[] = [
     tour_category: "Wildlife Safari",
     total_days: 6,
     max_passengers: 10,
-    tour_description: "Safari adventures in Yala, Udawalawe, and Minneriya National Parks to spot leopards and elephants",
+    tour_description:
+      "Safari adventures in Yala, Udawalawe, and Minneriya National Parks to spot leopards and elephants",
     tour_price: 920,
-    tour_image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400",
+    tour_image:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400",
     createdAt: "2024-01-18T10:00:00Z",
-    updatedAt: "2024-01-18T10:00:00Z"
+    updatedAt: "2024-01-18T10:00:00Z",
   },
   {
     _id: "5",
@@ -70,12 +86,14 @@ const tours: Tour[] = [
     tour_category: "Comprehensive Tour",
     total_days: 14,
     max_passengers: 8,
-    tour_description: "Experience all of Sri Lanka - culture, nature, wildlife, beaches, and hill country in one epic journey",
+    tour_description:
+      "Experience all of Sri Lanka - culture, nature, wildlife, beaches, and hill country in one epic journey",
     tour_price: 1850,
-    tour_image: "https://images.unsplash.com/photo-1580452632485-ff8fc8e3c2b9?w=400",
+    tour_image:
+      "https://images.unsplash.com/photo-1580452632485-ff8fc8e3c2b9?w=400",
     createdAt: "2024-01-19T10:00:00Z",
-    updatedAt: "2024-01-19T10:00:00Z"
-  }
+    updatedAt: "2024-01-19T10:00:00Z",
+  },
 ];
 
 export default function Tours() {
@@ -95,14 +113,22 @@ export default function Tours() {
       "Nature & Adventure": "bg-green-500/20 text-green-400",
       "Beach & Wildlife": "bg-blue-500/20 text-blue-400",
       "Wildlife Safari": "bg-orange-500/20 text-orange-400",
-      "Comprehensive Tour": "bg-purple-500/20 text-purple-400"
+      "Comprehensive Tour": "bg-purple-500/20 text-purple-400",
     };
     return colors[category] || "bg-gray-500/20 text-gray-400";
   };
 
   return (
     <div className="w-full h-auto flex flex-col space-y-3">
-      <h1 className="text-2xl font-bold">Tours</h1>
+      <div className="w-full flex justify-between items-center mb-5">
+        <h1 className="text-2xl font-bold">Tours</h1>
+        <Link to={"/admin/add-tour"}>
+          <div className="w-auto h-auto p-2 border-2 items-center border-white/10 bg-gray-700/40 flex gap-2 rounded-[10px] duration-300 hover:bg-transparent">
+            <FaPlus />
+            <h1>Add Tour</h1>
+          </div>
+        </Link>
+      </div>
 
       {/* Table */}
       <div className="w-full overflow-x-auto">
@@ -113,10 +139,18 @@ export default function Tours() {
               <th className="p-3 text-left text-sm font-semibold">Image</th>
               <th className="p-3 text-left text-sm font-semibold">Tour Name</th>
               <th className="p-3 text-left text-sm font-semibold">Category</th>
-              <th className="p-3 text-center text-sm font-semibold">Duration</th>
-              <th className="p-3 text-center text-sm font-semibold">Max Passengers</th>
-              <th className="p-3 text-left text-sm font-semibold">Description</th>
-              <th className="p-3 text-center text-sm font-semibold">Price (USD)</th>
+              <th className="p-3 text-center text-sm font-semibold">
+                Duration
+              </th>
+              <th className="p-3 text-center text-sm font-semibold">
+                Max Passengers
+              </th>
+              <th className="p-3 text-left text-sm font-semibold">
+                Description
+              </th>
+              <th className="p-3 text-center text-sm font-semibold">
+                Price (USD)
+              </th>
               <th className="p-3 text-center text-sm font-semibold">Actions</th>
             </tr>
           </thead>
@@ -145,7 +179,11 @@ export default function Tours() {
 
                 {/* Category */}
                 <td className="p-3 text-sm">
-                  <span className={`px-2 py-1 rounded-md text-xs font-medium ${getCategoryColor(tour.tour_category)}`}>
+                  <span
+                    className={`px-2 py-1 rounded-md text-xs font-medium ${getCategoryColor(
+                      tour.tour_category
+                    )}`}
+                  >
                     {tour.tour_category}
                   </span>
                 </td>
@@ -182,6 +220,15 @@ export default function Tours() {
                 {/* Actions */}
                 <td className="p-3">
                   <div className="flex justify-center gap-2">
+                    <Link to={"/admin/add-tour-details"}>
+                      <button
+                        onClick={() => handleEdit(tour._id)}
+                        className="p-2 bg-green-500/20 cursor-pointer hover:bg-green-500/40 text-green-400 rounded-md transition-colors duration-200"
+                        title="Add Tour Details"
+                      >
+                        <FaPlus className="text-lg" />
+                      </button>
+                    </Link>
                     <button
                       onClick={() => handleEdit(tour._id)}
                       className="p-2 bg-blue-500/20 cursor-pointer hover:bg-blue-500/40 text-blue-400 rounded-md transition-colors duration-200"
