@@ -19,6 +19,8 @@ import AddTour from "../components/tours/create-tours";
 import UpdateTour from "../components/tours/update-tours";
 import AddTourDetails from "../components/tour-details/add-tour-details";
 import UpdateTourDetails from "../components/tour-details/update-tour-details";
+import AddGalleryItem from "../components/gallery/add-gallery";
+import UpdateGalleryItem from "../components/gallery/update-gallery";
 
 export default function AdminPage() {
     return (
@@ -86,6 +88,8 @@ export default function AdminPage() {
                     <Route path="/add-tour-details" element = {<AddTourDetails/>} />
                     <Route path="/update-tour-details" element = {<UpdateTourDetails/>} />
                     <Route path="/gallery" element = {<Gallery/>} />
+                    <Route path="/add-gallery" element = {<AddGalleryItem/>} />
+                    <Route path="/update-gallery" element = {<UpdateGalleryItem/>} />
                 </Routes>
             </div>
         </div>
