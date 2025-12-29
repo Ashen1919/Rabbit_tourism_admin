@@ -16,6 +16,9 @@ import UpdateDestinations from "../components/destinations/update-destination";
 import AddDestinationDetails from "../components/destination-details/addDestinationDetails";
 import UpdateDestinationDetails from "../components/destination-details/updateDestinationDetails";
 import AddTour from "../components/tours/create-tours";
+import UpdateTour from "../components/tours/update-tours";
+import AddTourDetails from "../components/tour-details/add-tour-details";
+import UpdateTourDetails from "../components/tour-details/update-tour-details";
 
 export default function AdminPage() {
     return (
@@ -78,7 +81,10 @@ export default function AdminPage() {
                     <Route path="/update-destination-details" element = {<UpdateDestinationDetails/>} />
                     <Route path="/tours" element = {<Tours/>} />
                     <Route path="/add-tour" element = {<AddTour/>} />
+                    <Route path="/update-tour" element = {<UpdateTour/>} />
                     <Route path="/tour-details" element = {<Tour_Details/>} />
+                    <Route path="/add-tour-details" element = {<AddTourDetails/>} />
+                    <Route path="/update-tour-details" element = {<UpdateTourDetails/>} />
                     <Route path="/gallery" element = {<Gallery/>} />
                 </Routes>
             </div>

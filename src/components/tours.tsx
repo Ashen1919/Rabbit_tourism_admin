@@ -222,7 +222,6 @@ export default function Tours() {
                   <div className="flex justify-center gap-2">
                     <Link to={"/admin/add-tour-details"}>
                       <button
-                        onClick={() => handleEdit(tour._id)}
                         className="p-2 bg-green-500/20 cursor-pointer hover:bg-green-500/40 text-green-400 rounded-md transition-colors duration-200"
                         title="Add Tour Details"
                       >
