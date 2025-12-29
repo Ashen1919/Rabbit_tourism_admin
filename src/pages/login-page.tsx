@@ -33,7 +33,7 @@ export default function LoginPage() {
         </div>
 
         {/* login button */}
-        <button className="p-1.5 mt-3 cursor-pointer text-xl w-full rounded-[10px] border-2 border-white/10 bg-gray-700 duration-300 hover:bg-transparent">Login</button>
+        <button className="w-full p-2 cursor-pointer text-lg font-semibold rounded-[10px] border-2 border-white/10 bg-blue-600 hover:bg-blue-700 transition-colors duration-300">Login</button>
       </div>
     </div>
   );

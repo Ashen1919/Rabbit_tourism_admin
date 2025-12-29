@@ -171,7 +171,7 @@ export default function Destination_Details() {
                     <div className="flex justify-center gap-2">
                       <button
                         onClick={() => handleEdit(detail._id)}
-                        className="p-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-400 rounded-md transition-colors duration-200"
+                        className="p-2 bg-blue-500/20 cursor-pointer hover:bg-blue-500/40 text-blue-400 rounded-md transition-colors duration-200"
                         title="Edit"
                       >
                         <FiEdit className="text-lg" />
